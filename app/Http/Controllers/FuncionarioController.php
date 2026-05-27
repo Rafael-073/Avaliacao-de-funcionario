@@ -18,11 +18,14 @@ class FuncionarioController extends Controller
     public function salvar(Request $request)
     {
         $request->validate([
+            'empresa' => $request->empresa,
             'nome'  => 'required|string',
             'cargo' => 'required|string',
+            
         ]);
 
         Funcionario::create([
+            'empresa' => $request->empresa,
             'nome'  => $request->nome,
             'cargo' => $request->cargo,
         ]);
@@ -41,6 +44,7 @@ class FuncionarioController extends Controller
     public function atualizar(Request $request, $id)
     {
         $request->validate([
+            'empresa' => $request->empresa,
             'nome'  => 'required|string',
             'cargo' => 'required|string',
         ]);
