@@ -12,8 +12,9 @@
     </ul>
 @endif
 
-<fomr action="/funcionarios/atualizar/{{ $funcionario->id }}" method="POST">
+<form action="{{ route('funcionarios.atualizar', $funcionario->id) }}" method="POST">
     @csrf
+    @method('PUT')
 
     <label>Empresa:</label><br>
     <input type="text" name="empresa" value="{{ $funcionario->empresa }}"> <br><br>

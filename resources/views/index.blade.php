@@ -33,12 +33,18 @@
                   <a href="/funcionarios/visualizar/{{ $func->id }}">Visualizar</a> |
                 <a href="/funcionarios/editar/{{ $func->id }}">Editar</a> |
                 <a href="/avaliacoes/criar/{{ $func->id }}">Avaliar</a> |
-                <a href="/funcionarios/apagar/{{ $func->id }}"
+                <form action="{{ route('funcionarios.apagar', $funcionario->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
 
-                    onclick="return confirm('Apagar funcionário e todas suas avaliações?')">Excluir</a>
+                    <button type="submit">
+                        Excluir
+                    </button>
+                </form>
                 </td>
             </tr>
         @endforeach
+        {{ $funcionarios->links() }}
     </table>
 @endif
 

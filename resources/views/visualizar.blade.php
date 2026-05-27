@@ -7,7 +7,7 @@
 <h1>{{ $funcionario->nome }}</h1>
 <h1>{{ $funcionario->cargo }}</h1>
 
-<a href="avaliacoes/criar/{{ $funcionario->id }}">Nova Avaliação</a>
+<a href="{{ route('avaliacoes.criar', $funcionario->id) }}">Nova Avaliação</a>
 
 <br><br>
 

@@ -2,13 +2,24 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Funcionario extends Model
 {
-    protected $fillable = ["empresa", "nome", "cargo"];
+    use HasFactory;
 
-    // Um funcionário pode ter muitas avaliações (uma por mês)
+    protected $fillable = [
+        'nome',
+        'cargo',
+        'empresa',
+    ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
     public function avaliacoes()
     {
         return $this->hasMany(Avaliacao::class);
