@@ -66,5 +66,21 @@ class FuncionarioController extends Controller
             ->with('success', 'Funcionário atualizado com sucesso.');
     }
 
-    public function apagar($id)
+     public function apagar($id)
+    {
+        $funcionario = Funcionario::findOrFail($id);
+
+        $funcionario->delete();
+
+        return redirect()
+            ->route('funcionarios.listar')
+            ->with('success', 'Funcionário removido com sucesso.');
+    }
+
+    public function visualizar($id)
+    {
+        $funcionario = Funcionario::with('avaliacoes')->findOrFail($id);
+
+        return view('funcionarios.visualizar', compact('funcionario'));
+    }
 }

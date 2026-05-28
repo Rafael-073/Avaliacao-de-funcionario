@@ -13,9 +13,10 @@
     </ul>
 @endif
 
-<form action="/avaliacoes/salvar/{{ $funcionario->id }}" method="POST">
+<form action="{{ route('funcionarios.salvar') }}" method="POST">
     @csrf
-
+    @method('PUT')
+    
     <label>Mês de referência:</label><br>
     {{-- type="month" exibe um seletor de mês/ano no navegador, retorna no formato YYYY-MM --}}
     <input type="month" name="mes"><br><br>

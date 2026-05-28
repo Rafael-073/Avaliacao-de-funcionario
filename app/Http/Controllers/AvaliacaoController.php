@@ -12,7 +12,7 @@ class AvaliacaoController extends Controller
     {
         $funcionario = Funcionario::findOrFail($id);
 
-        return view('avaliacoes.criar', compact('funcionario'));
+        return view('funcionarios.criar', compact('funcionario'));
     }
 
     public function salvar(Request $request, $id)

@@ -33,7 +33,7 @@
                   <a href="/funcionarios/visualizar/{{ $func->id }}">Visualizar</a> |
                 <a href="/funcionarios/editar/{{ $func->id }}">Editar</a> |
                 <a href="/avaliacoes/criar/{{ $func->id }}">Avaliar</a> |
-                <form action="{{ route('funcionarios.apagar', $funcionario->id) }}" method="POST">
+                <form action="{{ route('funcionarios.apagar', $func->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
 
