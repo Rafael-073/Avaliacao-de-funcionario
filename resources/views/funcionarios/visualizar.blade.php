@@ -66,6 +66,6 @@
     @endforeach
 @endif
 
-<a href="funcionarios">Voltar</a>
+<a href="/funcionarios">Voltar</a>
 
 @endsection

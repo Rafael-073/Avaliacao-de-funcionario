@@ -32,7 +32,9 @@
 
                   <a href="/funcionarios/visualizar/{{ $func->id }}">Visualizar</a> |
                 <a href="/funcionarios/editar/{{ $func->id }}">Editar</a> |
-                <a href="/avaliacoes/criar/{{ $func->id }}">Avaliar</a> |
+                <a href="{{ route('avaliacoes.criar', $func->id) }}">
+                     Avaliar
+                </a> |
                 <form action="{{ route('funcionarios.apagar', $func->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -54,7 +56,7 @@
 <h2> Cadastrar novo funcionário </h2>
 
 <form action="/funcionarios/salvar" method="POST">
-    @call_user_func
+    @csrf
 
     <label> Empresa: </label><br>
     <input type="text"name="empresa"><br><br>

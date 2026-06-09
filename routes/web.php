@@ -26,7 +26,7 @@ Route::post('/funcionarios/salvar', [FuncionarioController::class, 'salvar'])
 Route::get('/funcionarios/editar/{id}', [FuncionarioController::class, 'editar'])
     ->name('funcionarios.editar');
 
-Route::put('/funcionarios/atualizar/{id}', [FuncionarioController::class, 'atualizar'])
+Route::post('/funcionarios/atualizar/{id}', [FuncionarioController::class, 'atualizar'])
     ->name('funcionarios.atualizar');
 
 Route::delete('/funcionarios/{id}', [FuncionarioController::class, 'apagar'])
