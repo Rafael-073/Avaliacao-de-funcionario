@@ -35,7 +35,7 @@
                 <a href="{{ route('avaliacoes.criar', $func->id) }}">
                      Avaliar
                 </a> |
-                <form action="{{ route('funcionarios.apagar', $func->id) }}" method="POST">
+                <form action="{{ route('funcionarios.apagar', $func->id) }}" method="POST" class="form-inline">
                     @csrf
                     @method('DELETE')
 

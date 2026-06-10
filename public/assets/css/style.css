@@ -133,6 +133,29 @@ form {
     max-width: 600px;
 }
 
+.form-inline {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+}
+
+.form-inline button[type="submit"] {
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    background: none;
+    color: #dc2626;
+    border: none;
+    cursor: pointer;
+}
+
+.form-inline button[type="submit"]:hover {
+    text-decoration: underline;
+    background: none;
+}
+
 label {
     display: block;
     font-weight: 600;
